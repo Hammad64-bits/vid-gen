@@ -1,0 +1,205 @@
+/* ── Dashboard Page ─────────────────────────────────── */
+.dashboard-page {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Ambient blobs */
+.db-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.db-blob--primary {
+  width: 600px;
+  height: 600px;
+  background: var(--color-primary);
+  top: -200px;
+  right: -150px;
+}
+
+.db-blob--secondary {
+  width: 500px;
+  height: 500px;
+  background: var(--color-secondary);
+  bottom: -100px;
+  left: -100px;
+}
+
+/* ── Nav Bar ─────────────────────────────────────────── */
+.db-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem var(--space-md);
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.db-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.db-nav-icon {
+  font-size: 1.4rem;
+}
+
+.db-nav-title {
+  font-size: 1.4rem;
+  font-weight: var(--weight-black);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.db-nav-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.db-user-email {
+  font-size: 0.85rem;
+  color: rgba(244, 244, 244, 0.5);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.db-logout-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* ── Main Content ────────────────────────────────────── */
+.db-main {
+  position: relative;
+  z-index: 1;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Welcome Section ─────────────────────────────────── */
+.db-welcome {
+  animation: slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.db-welcome-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: var(--weight-black);
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.db-welcome-sub {
+  font-size: 1.05rem;
+  color: rgba(244, 244, 244, 0.5);
+}
+
+/* ── Action Cards Grid ───────────────────────────────── */
+.db-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-sm);
+  animation: slide-up 0.5s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.db-action-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: var(--space-md);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.04);
+  border: none;
+  text-align: left;
+  color: var(--color-text);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.db-action-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-glass);
+}
+
+.db-action-card--primary {
+  border: 1px solid rgba(253, 202, 64, 0.25);
+}
+
+.db-action-card--primary:hover {
+  box-shadow: var(--shadow-glow-primary);
+}
+
+.db-action-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.db-action-label {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+}
+
+.db-action-desc {
+  font-size: 0.8rem;
+  color: rgba(244, 244, 244, 0.45);
+}
+
+/* ── Stats Strip ─────────────────────────────────────── */
+.db-stats {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  animation: slide-up 0.5s 0.16s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.db-stat {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: var(--space-sm) var(--space-md);
+}
+
+.db-stat-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: var(--weight-black);
+}
+
+.db-stat-label {
+  font-size: 0.78rem;
+  color: rgba(244, 244, 244, 0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
