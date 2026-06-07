@@ -61,7 +61,8 @@ export default function Dashboard() {
 
                 {/* Quick actions */}
                 <section className="db-actions">
-                    <button id="db-new-video" className="db-action-card glass-panel db-action-card--primary">
+                    <button id="db-new-video" className="db-action-card glass-panel db-action-card--primary"
+                        onClick={() => window.location.href = '/generate'}>
                         <span className="db-action-icon">✨</span>
                         <span className="db-action-label">New Video</span>
                         <span className="db-action-desc">Generate from a prompt</span>
