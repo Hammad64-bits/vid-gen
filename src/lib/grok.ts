@@ -7,7 +7,7 @@
  * The brief is then passed directly to Suno for generation.
  */
 
-const GROK_BASE = 'https://api.x.ai/v1';
+const GROK_BASE = '/api/grok/v1';
 const GROK_MODEL = 'grok-3-mini';
 
 // ── Types ─────────────────────────────────────────────────────────────────────

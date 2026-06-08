@@ -11,7 +11,7 @@
  * from localhost. We use polling as the authoritative approach.
  */
 
-const SUNO_BASE = 'https://api.sunoapi.org/api/v1';
+const SUNO_BASE = '/api/suno/api/v1';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
